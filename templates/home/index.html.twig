@@ -1,0 +1,276 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inicio | Fullstack Developer{% endblock %}
+
+{% block body %}
+    <header class="navbar">
+        <nav class="container">
+            <div class="logo-with-image">
+                <img src="{{ asset('images/avatar.jpg') }}" alt="Mi Avatar" class="avatar">
+                <span class="logo">Yamil Nicolas Ruffa</span>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul id="nav-links">
+                <li><a href="#sobre-mi-es" class="lang-es">Sobre mí</a><a href="#about-me-en" class="lang-en" style="display: none;">About me</a></li>
+                <li><a href="#proyectos-es" class="lang-es">Proyectos</a><a href="#projects-en" class="lang-en" style="display: none;">Projects</a></li>
+                <li><a href="#contacto-es" class="lang-es">Contacto</a><a href="#contact-en" class="lang-en" style="display: none;">Contact</a></li>
+                <li><button id="lang-toggle" class="language-button">English</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero lang-es">
+        <div class="container hero-content">
+            <h1>Hola, soy <span class="highlight">Analista y Desarrollador</span></h1>
+            <p>Tecnologías que utilizo: <strong> JAVA | PYTHON | PHP | SPRING BOOT | SYMFONY | SQL | Flask |</strong></p>
+            <a href="#proyectos-es" class="btn-primary">Ver Proyectos</a>
+        </div>
+    </section>
+    <section class="hero lang-en" style="display: none;">
+        <div class="container hero-content">
+            <h1>Hello, I'm a <span class="highlight">Analist and Developer</span></h1>
+            <p>Technologies I use: <strong> JAVA | PYTHON | PHP | SPRING BOOT | SYMFONY | SQL | Flask|</strong></p>
+            <a href="#projects-en" class="btn-primary">View Projects</a>
+        </div>
+    </section>
+
+    <section id="sobre-mi-es" class="section container lang-es">
+        <h2>Sobre mí</h2>
+        <p>Soy desarrollador con formación en programación y experiencia en diversas tecnologías,
+            con el objetivo de especializarme en el desarrollo de videojuegos.
+            He trabajado con herramientas como <strong>Symfony</strong> y <strong>Spring Boot</strong> para el desarrollo de aplicaciones web
+            basadas en el modelo MVC, así como con <strong>Java</strong>, <strong>PHP</strong>, <strong>Python</strong> y <strong>Android Studio</strong>.
+            Manejo bases de datos relacionales <strong>(SQL)</strong> y metodologías ágiles de trabajo <strong>(SCRUM)</strong>.
+            Además, cuento con experiencia como ayudante de cátedra en Introducción a la Programación,
+            donde participé en la enseñanza de conceptos fundamentales, creación de gráficos,
+            documentación técnica y elaboración de manuales de usuario y buenas prácticas</p>
+    </section>
+    <section id="about-me-en" class="section container lang-en" style="display: none;">
+        <h2>About me</h2>
+        <p>I am a developer with a background in programming and experience in various technologies,
+            aiming to specialize in video game development.
+            I have worked with tools such as <strong>Symfony</strong> and <strong>Spring Boot</strong> for web application development
+            based on the MVC model, as well as with <strong>Java</strong>, <strong>PHP</strong>, <strong>Python</strong>, and <strong>Android Studio</strong>.
+            I manage relational databases <strong>(SQL)</strong> and agile work methodologies <strong>(SCRUM)</strong>.
+            Additionally, I have experience as a teaching assistant in Introduction to Programming,
+            where I participated in teaching fundamental concepts, creating graphics,
+            technical documentation, and developing user manuals and best practices.</p>
+    </section>
+
+        <section id="contacto-es" class="section container lang-es">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+            <div class="image-container">
+                <a href="https://ar.linkedin.com/in/yamil-nicolas-ruffa-a9b49717b" target="_blank" title="Ver mi perfil de LinkedIn">
+                    <img src="{{ asset('images/icons8-linkedin-100.png') }}" alt="LinkedIn" class="contact-image">
+                </a>
+
+                <a href="#" id="gmail-icon-es" title="Envíame un correo">
+                    <img src="{{ asset('images/gmail.png') }}" alt="Gmail" class="contact-image">
+                </a>
+
+                <a href="https://github.com/Yamilruffa" target="_blank" title="Ver mi repositorio de GitHub">
+                    <img src="{{ asset('images/icons8-github-200.png') }}" alt="GitHub" class="contact-image">
+                </a>
+            </div>
+
+            <form id="email-form-es" class="email-form" method="POST" action="{{ path('contact_send') }}" style="display: none;">
+                <label for="nombre-es">Nombre:</label><br>
+                <input type="text" id="nombre-es" name="nombre" required><br><br>
+
+                <label for="correo-es">Correo:</label><br>
+                <input type="email" id="correo-es" name="correo" required><br><br>
+
+                <label for="mensaje-es">Mensaje:</label><br>
+                <textarea id="mensaje-es" name="mensaje" rows="4" required></textarea><br><br>
+
+                <button type="submit">Enviar</button>
+                <button type="button" id="cancel-btn-es">Cancelar</button>
+            </form>
+
+        </div>
+    </section>
+
+    <section id="contact-en" class="section container lang-en" style="display: none;">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <div class="image-container">
+                <a href="https://ar.linkedin.com/in/yamil-nicolas-ruffa-a9b49717b" target="_blank" title="Visit my LinkedIn">
+                    <img src="{{ asset('images/icons8-linkedin-100.png') }}" alt="LinkedIn" class="contact-image">
+                </a>
+
+                <a href="#" id="gmail-icon-en" title="Send me an email">
+                    <img src="{{ asset('images/gmail.png') }}" alt="Gmail" class="contact-image">
+                </a>
+
+                <a href="https://github.com/Yamilruffa" target="_blank" title="View my GitHub repository">
+                    <img src="{{ asset('images/icons8-github-200.png') }}" alt="GitHub" class="contact-image">
+                </a>
+            </div>
+
+            <form id="email-form-en" class="email-form" method="POST" action="{{ path('contact_send') }}" style="display: none;">
+                <label for="nombre-en">Nombre:</label><br>
+                <input type="text" id="nombre-en" name="nombre" required><br><br>
+
+                <label for="correo-en">Correo:</label><br>
+                <input type="email" id="correo-en" name="correo" required><br><br>
+
+                <label for="mensaje-en">Mensaje:</label><br>
+                <textarea id="mensaje-en" name="mensaje" rows="4" required></textarea><br><br>
+
+                <button type="submit">Enviar</button>
+                <button type="button" id="cancel-btn-en">Cancelar</button>
+            </form>
+
+        </div>
+    </section>
+
+    <section id="proyectos-es" class="section container lang-es">
+        <h2>Proyectos</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                    <div class="project-info">
+                        <h3>Recetario de cocina online</h3>
+                        <p>Descripción breve del proyecto 1.</p>
+                    </div>
+                </a>
+                <p class="project-docs">
+                    <a href="{{ asset('archivos/Documentacion - Sistema Recetario.pdf') }}" target="_blank">
+                        Documentación del proyecto
+                    </a>
+                </p>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/usuario/proyecto2" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                    <div class="project-info">
+                        <h3>Proyecto 2</h3>
+                        <p>Descripción breve del proyecto 2.</p>
+                    </div>
+                </a>
+                <p class="project-docs">
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
+                        Documentación del proyecto
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="projects-en" class="section container lang-en" style="display: none;">
+        <h2>Projects</h2>
+        <div class="project-list">
+            <div class="project-item">
+                <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                    <div class="project-info">
+                        <h3>Online Cookbook</h3>
+                        <p>Brief description of project 1.</p>
+                    </div>
+                </a>
+                <p class="project-docs">
+                    <a href="{{ asset('archivos/Documentacion - Sistema Recetario.pdf') }}" target="_blank">
+                        Project Documentation
+                    </a>
+                </p>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/usuario/proyecto2" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                    <div class="project-info">
+                        <h3>Project 2</h3>
+                        <p>Brief description of project 2.</p>
+                    </div>
+                </a>
+                <p class="project-docs">
+                    <a href="{{ asset('aca va la docu del proyecto 2') }}" target="_blank">
+                        Project Documentation
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const langToggle = document.getElementById('lang-toggle');
+            const langEsElements = document.querySelectorAll('.lang-es');
+            const langEnElements = document.querySelectorAll('.lang-en');
+            const navLinksEs = document.querySelectorAll('#nav-links .lang-es');
+            const navLinksEn = document.querySelectorAll('#nav-links .lang-en');
+
+            langToggle.addEventListener('click', function() {
+                const isEnglish = langToggle.textContent === 'English';
+
+                langEsElements.forEach(el => el.style.display = isEnglish ? 'none' : 'block');
+                langEnElements.forEach(el => el.style.display = isEnglish ? 'block' : 'none');
+
+                navLinksEs.forEach(el => el.style.display = isEnglish ? 'none' : 'inline-block');
+                navLinksEn.forEach(el => el.style.display = isEnglish ? 'inline-block' : 'none');
+
+                langToggle.textContent = isEnglish ? 'Español' : 'English';
+
+                // Update the title based on the language
+                document.title = isEnglish ? 'Home | Fullstack Developer' : 'Inicio | Fullstack Developer';
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // Función para togglear formulario según IDs pasados
+        function toggleForm(iconId, formId, cancelBtnId) {
+            const icon = document.getElementById(iconId);
+            const form = document.getElementById(formId);
+            const cancelBtn = document.getElementById(cancelBtnId);
+
+            if (!icon || !form || !cancelBtn) return;
+
+            icon.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (form.style.display === 'none' || form.style.display === '') {
+                    form.style.display = 'flex';  // flex para respetar gap y estilos CSS
+                } else {
+                    form.style.display = 'none';
+                }
+            });
+
+            cancelBtn.addEventListener('click', function() {
+                form.style.display = 'none';
+            });
+
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                // Obtener valores según formulario
+                const nombre = form.querySelector('input[type="text"]').value.trim();
+                const correo = form.querySelector('input[type="email"]').value.trim();
+                const mensaje = form.querySelector('textarea').value.trim();
+
+                if (!nombre || !correo || !mensaje) {
+                    alert('Por favor completa todos los campos.');
+                    return;
+                }
+
+                const subject = encodeURIComponent('Mensaje desde tu web de ' + nombre);
+                const body = encodeURIComponent(`Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`);
+
+                window.location.href = `mailto:tuemail@gmail.com?subject=${subject}&body=${body}`;
+
+                form.style.display = 'none';
+                form.reset();
+            });
+        }
+
+        // Llamar a la función para ambos idiomas
+        toggleForm('gmail-icon-es', 'email-form-es', 'cancel-btn-es');
+        toggleForm('gmail-icon-en', 'email-form-en', 'cancel-btn-en');
+    });
+
+    </script>
+{% endblock %}

@@ -1,0 +1,446 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 16px;
+
+  /* Paleta de colores */
+  --color-accent-yellow: #ffe556;
+  --color-accent-cyan: #00bcf0;
+  --color-dark-bg: #303539;
+  --color-light-text: #f1f1f1;
+  --color-muted-text: #bbb;
+  --color-link: #009edb;
+}
+
+/* Base */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--color-dark-bg);
+  color: var(--color-light-text);
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 68.75rem;
+  margin: auto;
+  padding: 1.5rem;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #252a2f;
+  color: white;
+  padding: 1rem 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-with-image {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-with-image .avatar {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.logo-with-image .avatar:hover {
+  transform: scale(1.05);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+nav ul li a {
+  color: white;
+  font-weight: 500;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.hero {
+    background: transparent !important; /* Sin color de fondo */
+    padding: 3rem 0;  /* Mantiene espacio arriba y abajo */
+    border: none;
+    box-shadow: none;
+}
+
+/* Hero content: fondo azul claro, más ancho y bordes redondeados */
+.hero-content {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #118ebc;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    color: #d4eaff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    color: 	#1F1F1F;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero-content .highlight {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    color: #000;
+}
+
+.hero-content p {
+    color: 	#1F1F1F;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-primary {
+  background: var(--color-light-text);
+  color: #000;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: #e0e0e0;
+}
+
+/* SECCIONES */
+.section {
+  padding: 4rem 1rem;
+  background: #3a3f45;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-info p {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.contact-info i {
+  font-size: 2rem;
+}
+
+.contact-info .fa-google {
+  color: #ea4335;
+}
+
+.contact-info .fa-linkedin {
+  color: #0077b5;
+}
+
+.contact-info .fa-github {
+  color: #181717;
+}
+
+.contact-info a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+}
+
+.contact-info a span {
+  display: none;
+}
+
+.contact-info a i {
+  font-size: 3em;
+}
+
+/* Proyectos */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #41464b;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.project-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+.project-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--color-light-text);
+  gap: 0.5rem;
+}
+
+.project-item i {
+  font-size: 2rem;
+  color: var(--color-light-text);
+}
+
+.project-item h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-light-text);
+}
+
+.project-item p {
+  font-size: 1rem;
+  color: var(--color-muted-text);
+}
+
+.project-docs {
+  margin-top: 1rem;
+}
+
+.project-docs a {
+  color: var(--color-link);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.project-docs a:hover {
+  text-decoration: underline;
+}
+
+.project-item a:hover i,
+.project-item a:hover h3,
+.project-item a:hover p {
+  color: var(--color-accent-cyan);
+}
+
+/* Contact image container */
+.image-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.image-container a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 8em;
+  height: 8em;
+  border-radius: 50%;
+  background-color: #41464b;
+}
+
+.contact-image {
+  width: auto;
+  height: auto;
+  max-width: 70%;
+  max-height: 70%;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contact-image:hover {
+  transform: scale(1.1);
+}
+
+/* Botón de lenguaje */
+.language-button {
+  background-color: transparent;
+  color: var(--color-accent-yellow);
+  border: 2px solid var(--color-accent-yellow);
+  padding: 0.4rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.3s ease, border-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.language-button:hover {
+  color: #d4b300;
+  border-color: #d4b300;
+}
+
+/*formulario para mandar correo */
+/* Estilos para el formulario de contacto emergente */
+.email-form {
+  background-color: #41464b; /* fondo acorde a secciones */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  color: var(--color-light-text);
+  font-size: 1rem;
+  margin: 1rem auto 0 auto;
+  display: none; /* oculto por defecto */
+  flex-direction: column;
+  gap: 0.75rem;
+  display: flex; /* si quieres que se vea con flex cuando se muestre */
+}
+
+/* Inputs y textarea */
+.email-form input[type="text"],
+.email-form input[type="email"],
+.email-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: #303539;
+  color: var(--color-light-text);
+  resize: vertical;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+  transition: background-color 0.3s ease;
+}
+
+.email-form input[type="text"]:focus,
+.email-form input[type="email"]:focus,
+.email-form textarea:focus {
+  outline: none;
+  background-color: #3f464d;
+  box-shadow: 0 0 5px var(--color-accent-cyan);
+}
+
+/* Labels */
+.email-form label {
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+/* Botones */
+.email-form button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.email-form button[type="submit"] {
+  background-color: var(--color-accent-cyan);
+  color: var(--color-dark-bg);
+  margin-right: 0.5rem;
+}
+
+.email-form button[type="submit"]:hover {
+  background-color: #0096d6;
+  color: #fff;
+}
+
+.email-form button#cancel-btn-es,
+.email-form button#cancel-btn-en {
+  background-color: #bbb;
+  color: #333;
+}
+
+.email-form button#cancel-btn-es:hover,
+.email-form button#cancel-btn-en:hover {
+  background-color: #999;
+  color: #111;
+}
+
+/* Para que el contenedor padre (contact-info) pueda acomodar el formulario */
+.contact-info {
+  align-items: center;
+  flex-direction: column;
+}
+
+
+/* Responsive */
+@media (max-width: 48rem) {
+  nav ul {
+    flex-direction: column;
+    background: #40464d;
+    padding: 1rem;
+    display: none;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .logo-with-image .avatar {
+    width: 3rem;
+    height: 3rem;
+  }
+}
