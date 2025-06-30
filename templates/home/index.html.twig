@@ -22,28 +22,28 @@
     <section class="hero lang-es">
         <div class="container hero-content">
             <h1>Hola, soy <span class="highlight">Analista y Desarrollador</span></h1>
-            <p>Tecnologías que utilizo: <strong> JAVA | PYTHON | PHP | SPRING BOOT | SYMFONY | SQL | Flask |</strong></p>
+            <p>Tecnologías que utilizo: <strong> JAVA | PYTHON | PHP | SPRING BOOT | SYMFONY | SQL | FLASK | ANDROID STUDIO |</strong></p>
             <a href="#proyectos-es" class="btn-primary">Ver Proyectos</a>
         </div>
     </section>
     <section class="hero lang-en" style="display: none;">
         <div class="container hero-content">
             <h1>Hello, I'm a <span class="highlight">Analist and Developer</span></h1>
-            <p>Technologies I use: <strong> JAVA | PYTHON | PHP | SPRING BOOT | SYMFONY | SQL | Flask|</strong></p>
+            <p>Technologies I use: <strong> JAVA | PYTHON | PHP | SPRING BOOT | SYMFONY | SQL | FLASK | ANDROID STUDIO |</strong></p>
             <a href="#projects-en" class="btn-primary">View Projects</a>
         </div>
     </section>
 
     <section id="sobre-mi-es" class="section container lang-es">
         <h2>Sobre mí</h2>
-        <p>Soy desarrollador con formación en programación y experiencia en diversas tecnologías,
-            con el objetivo de especializarme en el desarrollo de videojuegos.
-            He trabajado con herramientas como <strong>Symfony</strong> y <strong>Spring Boot</strong> para el desarrollo de aplicaciones web
-            basadas en el modelo MVC, así como con <strong>Java</strong>, <strong>PHP</strong>, <strong>Python</strong> y <strong>Android Studio</strong>.
-            Manejo bases de datos relacionales <strong>(SQL)</strong> y metodologías ágiles de trabajo <strong>(SCRUM)</strong>.
-            Además, cuento con experiencia como ayudante de cátedra en Introducción a la Programación,
-            donde participé en la enseñanza de conceptos fundamentales, creación de gráficos,
-            documentación técnica y elaboración de manuales de usuario y buenas prácticas</p>
+        <p>Soy desarrollador con una sólida formación en programación y experiencia en diversas tecnologías.
+            Mi objetivo es especializarme en el desarrollo de videojuegos, un área que me apasiona.
+            He trabajado con herramientas como Symfony y Spring Boot para crear aplicaciones web siguiendo el modelo MVC,
+            y también manejo lenguajes como Java, PHP, Python y Android Studio. Tengo experiencia con bases de datos
+            relacionales (SQL) y suelo trabajar con metodologías ágiles como SCRUM para mantener los
+            proyectos organizados y eficientes. Además, tuve la oportunidad de ser ayudante de cátedra
+            en Introducción a la Programación, donde participé en la enseñanza de conceptos básicos,
+            la creación de gráficos, la documentación técnica y la elaboración de manuales de usuario y buenas prácticas.</p>
     </section>
     <section id="about-me-en" class="section container lang-en" style="display: none;">
         <h2>About me</h2>
@@ -132,14 +132,23 @@
                 <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
                     <i class="fab fa-github"></i>
                     <div class="project-info">
-                        <h3>Recetario de cocina online</h3>
-                        <p>Descripción breve del proyecto 1.</p>
+                        <h3>Primer Proyecto Individual – Sistema de Gestión de Recetas</h3>
+                        <p>Este fue mi primer proyecto desarrollado de forma individual. Durante el año 2024 me encargué del relevamiento de requerimientos y la elaboración completa de la documentación. Posteriormente, entre enero y marzo de 2025, llevé a cabo el desarrollo del sistema.</p>
+                        <p>Las tecnologías utilizadas fueron <strong>Symfony 5.4</strong>, <strong>MySQL</strong> y un frontend construido con <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>, integrados mediante plantillas <strong>Twig</strong> propias de Symfony.</p>
+                        <p>El sistema incluye las siguientes funcionalidades:</p>
+                        <ul>
+                        <li>Registro y login de usuarios</li>
+                        <li>Vistas diferenciadas para usuarios y administradores</li>
+                        <li>Creación, edición y publicación de recetas</li>
+                        <li>Sistema de favoritos y puntuación</li>
+                        </ul>
                     </div>
                 </a>
                 <p class="project-docs">
                     <a href="{{ asset('archivos/Documentacion - Sistema Recetario.pdf') }}" target="_blank">
                         Documentación del proyecto
-                    </a>
+                    </a><br>
+                    <a href="#" class="open-images" data-folder="/images/cookbook">Imágenes</a>
                 </p>
             </div>
 
@@ -147,8 +156,52 @@
                 <a href="https://github.com/usuario/proyecto2" target="_blank" class="project-link">
                     <i class="fab fa-github"></i>
                     <div class="project-info">
-                        <h3>Proyecto 2</h3>
-                        <p>Descripción breve del proyecto 2.</p>
+                        <h3>Sistema Único de Gestión Institucional Superior Técnica – Proyecto en Equipo</h3>
+                        <p>Este sistema fue desarrollado en colaboración con compañeros del instituto y profesores, a lo largo de un período de tres años.</p>
+                        <h3>2023</h3>
+                        <p>Realizamos el relevamiento de requerimientos mediante entrevistas con varios oferentes (otros institutos) para identificar las necesidades que el sistema debía cubrir. También desarrollamos la documentación técnica: diagramas UML, diseño de base de datos, diccionario de datos, casos de uso, entre otros.</p>
+                        <h3>2024</h3>
+                        <p>Basándonos en dicha documentación, comenzamos el desarrollo de los módulos principales. El sistema se divide en dos partes integradas:</p>
+                        <ul>
+                            <li><strong>Módulo Región:</strong> permite visualizar la oferta educativa de cada instituto de la provincia y habilita la preinscripción de aspirantes.</li>
+                            <li><strong>Módulo Local:</strong> se implementa en cada instituto y gestiona la información enviada desde Región, asignando los preinscriptos a las carreras correspondientes.</li>
+                        </ul>
+                        <h3>2025</h3>
+                        <p>Nos enfocamos en la corrección de errores, validaciones y mejoras generales del código. También desarrollamos módulos secundarios, como el sistema de toma de asistencia.</p>
+                        <p>Todo el proceso fue llevado a cabo aplicando metodologías ágiles (<strong>Scrum</strong>), en colaboración constante entre alumnos y docentes.</p>
+                        <p><em>Si bien el repositorio de este proyecto no es público, ante cualquier duda pueden comunicarse con el instituto en el siguiente enlace:
+                        <a href="http://www.i12.com.ar/i12/" target="_blank">http://www.i12.com.ar/i12/</a>
+                        </p>
+                    </div>
+                </a>
+                <p class="project-docs">
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
+                        Documentación del proyecto
+                    </a>
+                </p>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                    <div class="project-info">
+                        <h3>proyecto 3</h3>
+                        <p>texto del proyecto</p>
+                    </div>
+                </a>
+                <p class="project-docs">
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
+                        Documentación del proyecto
+                    </a>
+                </p>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                    <div class="project-info">
+                        <h3>proyecto 4</h3>
+                        <p>texto del proyecto</p>
                     </div>
                 </a>
                 <p class="project-docs">
@@ -159,6 +212,7 @@
             </div>
         </div>
     </section>
+
     <section id="projects-en" class="section container lang-en" style="display: none;">
         <h2>Projects</h2>
         <div class="project-list">
@@ -166,8 +220,16 @@
                 <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
                     <i class="fab fa-github"></i>
                     <div class="project-info">
-                        <h3>Online Cookbook</h3>
-                        <p>Brief description of project 1.</p>
+                        <h3>First Individual Project – Recipe Management System</h3>
+                        <p>This was my first project developed independently. Throughout 2024, I was responsible for gathering requirements and producing all the documentation. Then, from January to March 2025, I carried out the system’s full development.</p>
+                        <p>The technologies used were <strong>Symfony 5.4</strong>, <strong>MySQL</strong>, and a frontend built with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, integrated using <strong>Twig</strong> templates (Symfony's templating engine).</p>
+                        <p>The system includes the following features:</p>
+                        <ul>
+                            <li>User registration and login</li>
+                            <li>Separate views for users and administrators</li>
+                            <li>Recipe creation, editing, and publishing</li>
+                            <li>Favorites and rating system</li>
+                        </ul>
                     </div>
                 </a>
                 <p class="project-docs">
@@ -181,8 +243,22 @@
                 <a href="https://github.com/usuario/proyecto2" target="_blank" class="project-link">
                     <i class="fab fa-github"></i>
                     <div class="project-info">
-                        <h3>Project 2</h3>
-                        <p>Brief description of project 2.</p>
+                        <h3>Unified Management System for Technical Higher Education Institutions – Team Project</h3>
+                        <p>This system was developed in collaboration with fellow students and professors over a period of three years.</p>
+                        <h3>2023</h3>
+                        <p>We conducted requirements gathering through interviews with multiple stakeholders (other institutes) to identify the system's needs. We also created comprehensive technical documentation, including UML diagrams, database design, data dictionary, use cases, and more.</p>
+                        <h3>2024</h3>
+                        <p>Based on this documentation, we developed the system’s main modules. The system is composed of two integrated parts:</p>
+                        <ul>
+                            <li><strong>Regional Module:</strong> displays the educational offerings of each provincial institute and allows applicants to pre-register.</li>
+                            <li><strong>Local Module:</strong> used within each institute to process the data received from the regional system and assign applicants to their chosen programs.</li>
+                        </ul>
+                        <h3>2025</h3>
+                        <p>We focused on bug fixing, validations, and overall code improvement. We also developed secondary modules, such as the attendance tracking system.</p>
+                        <p>The entire process was carried out using agile methodologies (<strong>Scrum</strong>), with constant collaboration between students and instructors.</p>
+                        <p><em>Although the repository for this project is not public, you can contact the institute for more information at the following link:
+                        <a href="http://www.i12.com.ar/i12/" target="_blank">http://www.i12.com.ar/i12/</a>
+                        </p>
                     </div>
                 </a>
                 <p class="project-docs">
@@ -191,12 +267,54 @@
                     </a>
                 </p>
             </div>
+
+            <div class="project-item">
+                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                    <div class="project-info">
+                        <h3>project 3</h3>
+                        <p>texto del proyecto</p>
+                    </div>
+                </a>
+                <p class="project-docs">
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
+                        Documentación del proyecto
+                    </a>
+                </p>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
+                    <i class="fab fa-github"></i>
+                    <div class="project-info">
+                        <h3>project 4</h3>
+                        <p>texto del proyecto</p>
+                    </div>
+                </a>
+                <p class="project-docs">
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
+                        Documentación del proyecto
+                    </a>
+                </p>
+            </div>
         </div>
     </section>
+    
+
+    <div id="image-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <span id="modal-close" style="cursor:pointer; float:right; font-size: 1.5rem;">&times;</span>
+        <div id="modal-images" style="display:flex; flex-wrap: wrap; gap: 1rem; justify-content: center;"></div>
+    </div>
+    </div>
+
+
+    </div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
+    <script src="{{ asset('js/main.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const langToggle = document.getElementById('lang-toggle');
