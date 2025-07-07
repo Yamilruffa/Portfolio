@@ -39,7 +39,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
+/*
 function copyEmailAndOpenGmail(event) {
     event.preventDefault();
     const email = "devruffa@gmail.com";
@@ -54,7 +54,7 @@ function copyEmailAndOpenGmail(event) {
         alert("No se pudo copiar el correo: u.u " + err);
     });
 }
-
+*/
 document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('image-modal');
     const modalImages = document.getElementById('modal-images');
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             const folder = this.dataset.folder;
 
-            fetch(`/images/list?folder=${encodeURIComponent(folder)}`)
+            fetch(`/portfolio/public/index.php/images/list?folder=${encodeURIComponent(folder)}`)
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
