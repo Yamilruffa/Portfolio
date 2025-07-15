@@ -51,42 +51,6 @@ class HomeController extends AbstractController
         return $this->redirectToRoute('app_home');
     }
 
-    #[Route('/images/list', name: 'images_list', methods: ['GET'])]
-    public function listImages(Request $request, KernelInterface $kernel): JsonResponse
-    {
-        $folder = $request->query->get('folder');  // ej: 'cookbook'
 
-        if (!$folder) {
-            return $this->json(['error' => 'Falta el parámetro folder'], 400);
-        }
 
-        // Solo permitir ciertas carpetas para evitar vulnerabilidades
-        $allowedFolders = ['cookbook', 'otra-carpeta']; // agrega aquí carpetas permitidas
-        if (!in_array($folder, $allowedFolders)) {
-            return $this->json(['error' => 'Carpeta no permitida'], 403);
-        }
-
-        // Ruta absoluta a la carpeta pública de imágenes
-        $publicDir = $kernel->getProjectDir() . '/public/images/' . $folder;
-
-        if (!is_dir($publicDir)) {
-            return $this->json(['error' => 'Carpeta no encontrada'], 404);
-        }
-
-        $images = [];
-        $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
-
-        // Leer archivos en el directorio
-        $files = scandir($publicDir);
-
-        foreach ($files as $file) {
-            $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-            if (in_array($ext, $allowedExtensions)) {
-                // Generar URL accesible públicamente
-                $images[] = '/images/' . $folder . '/' . $file;
-            }
-        }
-
-        return $this->json(['images' => $images]);
-    }
 }
