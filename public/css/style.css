@@ -40,11 +40,12 @@ a {
 .navbar {
   background: #252a2f;
   color: white;
-  padding: 1rem 0;
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
   z-index: 1000;
+  height: 5rem; /* Altura fija */
+  overflow: hidden; /* Evita que el contenido se desborde */
 }
 
 nav {
@@ -57,11 +58,13 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  transform: scale(1.2); /* Aumenta tamaño sin ocupar más espacio */
+  transform-origin: left center; /* Mantiene alineado con la izquierda */
 }
 
 .logo-with-image .avatar {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.2);
@@ -73,7 +76,7 @@ nav {
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: bold;
 }
 
@@ -145,12 +148,12 @@ nav ul li a {
 }
 
 .btn-primary:hover {
-  background: #e0e0e0;
+  background: #ffe556;
 }
 
 /* SECCIONES */
 .section {
-  padding: 4rem 1rem;
+  padding: 4rem 3rem;
   background: #3a3f45;
   border-radius: 8px;
   margin-bottom: 2rem;
@@ -277,6 +280,18 @@ nav ul li a {
   text-decoration: underline;
 }
 
+.project-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.project-footer i {
+  font-size: 2.5rem;
+  color: #fff;
+}
 
 
 /* Contact image container */
@@ -418,6 +433,16 @@ nav ul li a {
   flex-direction: column;
 }
 
+
+.footer{
+    background-color: #0077b5;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    font-size: 1.25rem;
+    width: 100%;
+}
 
 /* Responsive */
 @media (max-width: 48rem) {
@@ -617,3 +642,8 @@ nav ul li a {
     cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 1.5rem;
+  }
+}

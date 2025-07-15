@@ -12,7 +12,7 @@
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul id="nav-links">
                 <li><a href="#sobre-mi-es" class="lang-es">Sobre mí</a><a href="#about-me-en" class="lang-en" style="display: none;">About me</a></li>
-                <li><a href="#proyectos-es" class="lang-es">Proyectos</a><a href="#projects-en" class="lang-en" style="display: none;">Projects</a></li>
+                <li><a href="#proyectos-es" class="lang-es">Trabajos</a><a href="#projects-en" class="lang-en" style="display: none;">Projects</a></li>
                 <li><a href="#contacto-es" class="lang-es">Contacto</a><a href="#contact-en" class="lang-en" style="display: none;">Contact</a></li>
                 <li><button id="lang-toggle" class="language-button">English</button></li>
             </ul>
@@ -23,7 +23,7 @@
         <div class="container hero-content">
             <h1>Hola, soy <span class="highlight">Analista y Desarrollador</span></h1>
             <p>Tecnologías que utilizo: <strong> JAVA | PYTHON | PHP | SPRING BOOT | SYMFONY | SQL | FLASK | ANDROID STUDIO |</strong></p>
-            <a href="#proyectos-es" class="btn-primary">Ver Proyectos</a>
+            <a href="#proyectos-es" class="btn-primary">Ver Trabajos</a>
         </div>
     </section>
     <section class="hero lang-en" style="display: none;">
@@ -126,13 +126,12 @@
     </section>
 
     <section id="proyectos-es" class="section container lang-es">
-        <h2>Proyectos</h2>
+        <h2>Trabajos</h2>
         <div class="project-list">
             <div class="project-item">
                 <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
                     <div class="project-info">
-                        <h3>Primer Proyecto Individual – Sistema de Gestión de Recetas</h3>
+                        <h3>Sistema de Gestión de Recetas</h3>
                         <p>Este fue mi primer proyecto desarrollado de forma individual. Durante el año 2024 me encargué del relevamiento de requerimientos y la elaboración completa de la documentación. Posteriormente, entre enero y marzo de 2025, llevé a cabo el desarrollo del sistema.</p>
                         <p>Las tecnologías utilizadas fueron <strong>Symfony 5.4</strong>, <strong>MySQL</strong> y un frontend construido con <strong>HTML</strong>, <strong>CSS</strong> y <strong>JavaScript</strong>, integrados mediante plantillas <strong>Twig</strong> propias de Symfony.</p>
                         <p>El sistema incluye las siguientes funcionalidades:</p>
@@ -144,6 +143,7 @@
                         </ul>
                     </div>
                 </a>
+                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('archivos/Documentacion - Sistema Recetario.pdf') }}" target="_blank">
                         Documentación del proyecto
@@ -154,7 +154,6 @@
 
             <div class="project-item">
                 <a href="https://github.com/usuario/proyecto2" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
                     <div class="project-info">
                         <h3>Sistema Único de Gestión Institucional Superior Técnica – Proyecto en Equipo</h3>
                         <p>Este sistema fue desarrollado en colaboración con compañeros del instituto y profesores, a lo largo de un período de tres años.</p>
@@ -170,10 +169,28 @@
                         <p>Nos enfocamos en la corrección de errores, validaciones y mejoras generales del código. También desarrollamos módulos secundarios, como el sistema de toma de asistencia.</p>
                         <p>Todo el proceso fue llevado a cabo aplicando metodologías ágiles (<strong>Scrum</strong>), en colaboración constante entre alumnos y docentes.</p>
                         <p><em>Si bien el repositorio de este proyecto no es público, ante cualquier duda pueden comunicarse con el instituto en el siguiente enlace:
-                        <a href="http://www.i12.com.ar/i12/" target="_blank">http://www.i12.com.ar/i12/</a>
                         </p>
                     </div>
                 </a>
+                <i class="fab fa-github"></i>
+                <p class="project-docs">
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
+                        Documentación del proyecto
+                    </a>
+                </p>
+                <a href="http://www.i12.com.ar/i12/" target="_blank">http://www.i12.com.ar/i12/</a>
+            </div>
+
+            <div class="project-item">
+                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
+                    <div class="project-info">
+                        <h3>Sistema de Gestion de stock para pintureria</h3>
+                        <p>En este proyecto participe realizando el desarrollo de backend utilizando Flask, un
+                        framework de python. En colaboracion con los equipos de frontend, diseño y analisis, se creo un 
+                        sistema que permite a los usuario generar presupuestos y administrar el stock para su negocio</p>
+                    </div>
+                </a>
+                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
                         Documentación del proyecto
@@ -183,27 +200,13 @@
 
             <div class="project-item">
                 <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
                     <div class="project-info">
-                        <h3>proyecto 3</h3>
-                        <p>texto del proyecto</p>
+                        <h3>Sistema de Gestion Comercial para comiqueria</h3>
+                        <p>En desarrollo.<br>
+                        Etapa: Licitacion de requerimentos- diseño de base de datos</p>
                     </div>
                 </a>
-                <p class="project-docs">
-                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
-                        Documentación del proyecto
-                    </a>
-                </p>
-            </div>
-
-            <div class="project-item">
-                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
-                    <div class="project-info">
-                        <h3>proyecto 4</h3>
-                        <p>texto del proyecto</p>
-                    </div>
-                </a>
+                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
                         Documentación del proyecto
@@ -218,9 +221,8 @@
         <div class="project-list">
             <div class="project-item">
                 <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
                     <div class="project-info">
-                        <h3>First Individual Project – Recipe Management System</h3>
+                        <h3>Recipe Management System</h3>
                         <p>This was my first project developed independently. Throughout 2024, I was responsible for gathering requirements and producing all the documentation. Then, from January to March 2025, I carried out the system’s full development.</p>
                         <p>The technologies used were <strong>Symfony 5.4</strong>, <strong>MySQL</strong>, and a frontend built with <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, integrated using <strong>Twig</strong> templates (Symfony's templating engine).</p>
                         <p>The system includes the following features:</p>
@@ -232,6 +234,7 @@
                         </ul>
                     </div>
                 </a>
+                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('archivos/Documentacion - Sistema Recetario.pdf') }}" target="_blank">
                         Project Documentation
@@ -241,7 +244,6 @@
 
             <div class="project-item">
                 <a href="https://github.com/usuario/proyecto2" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
                     <div class="project-info">
                         <h3>Unified Management System for Technical Higher Education Institutions – Team Project</h3>
                         <p>This system was developed in collaboration with fellow students and professors over a period of three years.</p>
@@ -257,25 +259,27 @@
                         <p>We focused on bug fixing, validations, and overall code improvement. We also developed secondary modules, such as the attendance tracking system.</p>
                         <p>The entire process was carried out using agile methodologies (<strong>Scrum</strong>), with constant collaboration between students and instructors.</p>
                         <p><em>Although the repository for this project is not public, you can contact the institute for more information at the following link:
-                        <a href="http://www.i12.com.ar/i12/" target="_blank">http://www.i12.com.ar/i12/</a>
                         </p>
                     </div>
                 </a>
+                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('aca va la docu del proyecto 2') }}" target="_blank">
                         Project Documentation
                     </a>
                 </p>
+                <a href="http://www.i12.com.ar/i12/" target="_blank">http://www.i12.com.ar/i12/</a>
             </div>
 
             <div class="project-item">
                 <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
                     <div class="project-info">
-                        <h3>project 3</h3>
-                        <p>texto del proyecto</p>
+                        <h3>Comic Book Sales Management System</h3>
+                        <p>Under development.<br>
+                        Stage: Requirements bidding - database design</p>
                     </div>
                 </a>
+                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
                         Documentación del proyecto
@@ -285,12 +289,15 @@
 
             <div class="project-item">
                 <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
-                    <i class="fab fa-github"></i>
                     <div class="project-info">
-                        <h3>project 4</h3>
-                        <p>texto del proyecto</p>
+                        <h3>Stock Management System for a Paint Store</h3>
+                        <p>In this project, I participated in backend development using Flask, a Python framework. 
+                        In collaboration with the frontend, design, and analytics teams, a system was created that allows 
+                        users to generate quotes and manage inventory for their business.</p>
+
                     </div>
                 </a>
+                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
                         Documentación del proyecto
@@ -299,16 +306,18 @@
             </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 - Yamil Nicolas Ruffa.<br> Todos los derechos reservados.</p>
+    </footer>
     
 
     <div id="image-modal" class="modal" style="display:none;">
-    <div class="modal-content">
-        <span id="modal-close" style="cursor:pointer; float:right; font-size: 1.5rem;">&times;</span>
-        <div id="modal-images" style="display:flex; flex-wrap: wrap; gap: 1rem; justify-content: center;"></div>
-    </div>
-    </div>
-
-
+        <div class="modal-content">
+            <span id="modal-close" style="cursor:pointer; float:right; font-size: 1.5rem;">&times;</span>
+            <div id="modal-images" style="display:flex; flex-wrap: wrap; gap: 1rem; justify-content: center;"></div>
+        </div>
+        </div>
     </div>
 {% endblock %}
 
