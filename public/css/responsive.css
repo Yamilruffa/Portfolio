@@ -1,0 +1,345 @@
+/* Para pantallas pequeñas (móviles - menos de 768px) */
+@media (max-width: 767px) {
+    .navbar {
+        height: auto;
+        padding: 1rem 1.5rem;
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between; /* Para mantener el logo a un lado si existe */
+        align-items: center;
+        min-height: 4rem; /* Ajusta según sea necesario */
+    }
+
+    nav {
+        flex-direction: row; /* Asegura que la nav interna esté en fila si contiene logo y otros elementos */
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo-with-image {
+        margin-bottom: 0;
+        transform: scale(1);
+    }
+
+    /* Oculta los enlaces de navegación en pantallas pequeñas */
+    #nav-links {
+        display: none;
+    }
+    
+    .hero {
+        padding-top: 8rem;
+    }
+    .hero-content {
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+    .section {
+        padding: 2rem 1rem;
+    }
+    .section h2 {
+        font-size: 1.8rem;
+    }
+    .contact-info .image-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .image-container a {
+        width: 6em;
+        height: 6em;
+    }
+    .contact-image {
+        max-width: 60%;
+        max-height: 60%;
+    }
+    .email-form {
+        max-width: 95%;
+        padding: 1rem;
+    }
+    .project-item {
+        padding: 1rem;
+    }
+    .project-item h3 {
+        font-size: 1.2rem;
+    }
+    .project-item p,
+    .project-item ul li {
+        font-size: 0.9rem;
+    }
+    .modal-content {
+        padding: 1rem;
+    }
+    #modal-images img {
+        max-width: 100%;
+        margin: 5px 0;
+    }
+    .github-icon-img {
+        width: 3.8rem;
+        height: 3.8rem;
+    }
+}
+
+/* Para tablets (768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 1rem;
+    }
+    .navbar {
+        height: 5rem;
+    }
+    .logo-with-image {
+        transform: scale(1.1);
+    }
+    nav ul { /* Esto aplica a #nav-links si es un ul */
+        gap: 1rem;
+    }
+    nav ul li a {
+        font-size: 0.95rem;
+    }
+    .language-button {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    .hero-content {
+        max-width: 90%;
+        padding: 2rem;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1.05rem;
+    }
+    .section {
+        padding: 3rem 1.5rem;
+    }
+    .section h2 {
+        font-size: 1.9rem;
+    }
+    .contact-info .image-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .image-container a {
+        width: 7em;
+        height: 7em;
+    }
+    .project-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    .project-item {
+        padding: 1.2rem;
+    }
+    .project-item h3 {
+        font-size: 1.3rem;
+    }
+    .project-item p,
+    .project-item ul li {
+        font-size: 0.95rem;
+    }
+    #modal-images img {
+        max-width: 45%;
+    }
+}
+
+/* Para pantallas grandes (desktops y laptops - más de 1024px) */
+@media (min-width: 1025px) {
+    .container {
+        padding: 1.5rem;
+    }
+    .navbar {
+        height: 5rem;
+    }
+    .logo-with-image {
+        transform: scale(1.2);
+    }
+    /* Asegura que #nav-links esté visible en desktop */
+    #nav-links {
+        display: flex !important; /* Fuerza la visibilidad y el layout flex horizontal */
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+        gap: 2rem;
+        box-shadow: none;
+        text-align: left;
+        width: auto;
+    }
+    nav ul { /* Esto aplica a #nav-links si es un ul */
+        gap: 1.5rem;
+    }
+    .hero {
+        padding-top: 12rem;
+    }
+    .hero-content {
+        max-width: 90%;
+    }
+    .section {
+        padding: 4rem 3rem;
+    }
+    .contact-info .image-container {
+        flex-direction: row;
+    }
+    .image-container a {
+        width: 8em;
+        height: 8em;
+    }
+    .project-item {
+        padding: 1.5rem;
+    }
+    .project-item h3 {
+        font-size: 1.5rem;
+    }
+    .project-item p,
+    .project-item ul li {
+        font-size: 1rem;
+    }
+    #modal-images img {
+        max-width: 300px;
+    }
+}
+
+/* Estilos para el contenedor del enlace (mantén o ajusta lo que ya tenías) */
+.project-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-top: 0.5rem;
+}
+
+/* Estilos para el icono PNG de GitHub */
+.github-icon-img {
+    width: 6rem;
+    height: 6rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover .github-icon-img {
+    transform: scale(1.1);
+}
+
+/* Las siguientes media queries se repiten en tu CSS original,
+   asegúrate de fusionarlas si es posible o de eliminar las duplicadas
+   para un código más limpio. Las mantengo aquí tal como las enviaste. */
+
+/* Para tablets (768px a 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 1rem;
+    }
+    .navbar {
+        height: 5rem;
+    }
+    .logo-with-image {
+        transform: scale(1.1);
+    }
+    nav ul { /* Asumiendo que #nav-links es un ul */
+        gap: 1rem;
+    }
+    nav ul li a {
+        font-size: 0.95rem;
+    }
+    .language-button {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    .hero-content {
+        max-width: 90%;
+        padding: 2rem;
+    }
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    .hero-content p {
+        font-size: 1.05rem;
+    }
+    .section {
+        padding: 3rem 1.5rem;
+    }
+    .section h2 {
+        font-size: 1.9rem;
+    }
+    .contact-info .image-container {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+    .image-container a {
+        width: 7em;
+        height: 7em;
+    }
+    .project-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    .project-item {
+        padding: 1.2rem;
+    }
+    .project-item h3 {
+        font-size: 1.3rem;
+    }
+    .project-item p,
+    .project-item ul li {
+        font-size: 0.95rem;
+    }
+    #modal-images img {
+        max-width: 45%;
+    }
+}
+
+/* Para pantallas grandes (desktops y laptops - más de 1024px) */
+@media (min-width: 1025px) {
+    .container {
+        padding: 1.5rem;
+    }
+    .navbar {
+        height: 5rem;
+    }
+    .logo-with-image {
+        transform: scale(1.2);
+    }
+    nav ul { /* Asumiendo que #nav-links es un ul */
+        gap: 1.5rem;
+    }
+    .hero {
+        padding-top: 12rem;
+    }
+    .hero-content {
+        max-width: 90%;
+    }
+    .section {
+        padding: 4rem 3rem;
+    }
+    .contact-info .image-container {
+        flex-direction: row;
+    }
+    .image-container a {
+        width: 8em;
+        height: 8em;
+    }
+    .project-item {
+        padding: 1.5rem;
+    }
+    .project-item h3 {
+        font-size: 1.5rem;
+    }
+    .project-item p,
+    .project-item ul li {
+        font-size: 1rem;
+    }
+    #modal-images img {
+        max-width: 300px;
+    }
+}

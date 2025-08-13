@@ -9,10 +9,9 @@
                 <img src="{{ asset('images/avatar.jpg') }}" alt="Mi Avatar" class="avatar">
                 <span class="logo">Yamil Nicolas Ruffa</span>
             </div>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul id="nav-links">
                 <li><a href="#sobre-mi-es" class="lang-es">Sobre mí</a><a href="#about-me-en" class="lang-en" style="display: none;">About me</a></li>
-                <li><a href="#proyectos-es" class="lang-es">Trabajos</a><a href="#projects-en" class="lang-en" style="display: none;">Projects</a></li>
+                <li><a href="#proyectos-es" class="lang-es">Trabajos</a><a href="#projects-en" class="lang-en" style="display: none;">My Work</a></li>
                 <li><a href="#contacto-es" class="lang-es">Contacto</a><a href="#contact-en" class="lang-en" style="display: none;">Contact</a></li>
                 <li><button id="lang-toggle" class="language-button">English</button></li>
             </ul>
@@ -28,9 +27,9 @@
     </section>
     <section class="hero lang-en" style="display: none;">
         <div class="container hero-content">
-            <h1>Hello, I'm a <span class="highlight">Analist and Developer</span></h1>
+            <h1>Hello, I'm a <span class="highlight">Analyst and Developer</span></h1>
             <p>Technologies I use: <strong> JAVA | PYTHON | PHP | SPRING BOOT | SYMFONY | SQL | FLASK | ANDROID STUDIO |</strong></p>
-            <a href="#projects-en" class="btn-primary">View Projects</a>
+            <a href="#projects-en" class="btn-primary">View My Work</a>
         </div>
     </section>
 
@@ -79,9 +78,19 @@
                 <label for="mensaje-es">Mensaje:</label><br>
                 <textarea id="mensaje-es" name="mensaje" rows="4" required></textarea><br><br>
 
+                <!-- Campo honeypot (invisible para humanos, visible para bots) -->
+                <div style="display:none;">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono">
+                </div>
+
+                <!-- Token CSRF -->
+                <input type="hidden" name="_token" value="{{ csrf_token('contact_form') }}">
+
                 <button type="submit">Enviar</button>
                 <button type="button" id="cancel-btn-es">Cancelar</button>
             </form>
+
 
         </div>
     </section>
@@ -104,17 +113,26 @@
             </div>
 
             <form id="email-form-en" class="email-form" method="POST" action="{{ path('contact_send') }}" style="display: none;">
-                <label for="nombre-en">Nombre:</label><br>
+                <label for="nombre-en">Name:</label><br>
                 <input type="text" id="nombre-en" name="nombre" required><br><br>
 
-                <label for="correo-en">Correo:</label><br>
+                <label for="correo-es">Mail:</label><br>
                 <input type="email" id="correo-en" name="correo" required><br><br>
 
-                <label for="mensaje-en">Mensaje:</label><br>
+                <label for="mensaje-es">Message:</label><br>
                 <textarea id="mensaje-en" name="mensaje" rows="4" required></textarea><br><br>
 
-                <button type="submit">Enviar</button>
-                <button type="button" id="cancel-btn-en">Cancelar</button>
+                <!-- Campo honeypot (invisible para humanos, visible para bots) -->
+                <div style="display:none;">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="text" id="telefono" name="telefono">
+                </div>
+
+                <!-- Token CSRF -->
+                <input type="hidden" name="_token" value="{{ csrf_token('contact_form') }}">
+
+                <button type="submit">Send</button>
+                <button type="button" id="cancel-btn-en">Cancel</button>
             </form>
 
         </div>
@@ -124,7 +142,6 @@
         <h2>Trabajos</h2>
         <div class="project-list">
             <div class="project-item">
-                <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
                     <div class="project-info">
                         <h3>Sistema de Gestión de Recetas</h3>
                         <p>Este fue mi primer proyecto desarrollado de forma individual. Durante el año 2024 me encargué del relevamiento de requerimientos y la elaboración completa de la documentación. Posteriormente, entre enero y marzo de 2025, llevé a cabo el desarrollo del sistema.</p>
@@ -137,17 +154,22 @@
                         <li>Sistema de favoritos y puntuación</li>
                         </ul>
                     </div>
+                <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
+                    <img src="{{ asset('images/icons-github.png') }}" alt="GitHub Icon" class="github-icon-img">
+
                 </a>
-                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('archivos/Documentacion - Sistema Recetario.pdf') }}" target="_blank">
                         Documentación del proyecto
                     </a><br>
                 </p>
+                <p class="project-images-link">
+                    <a href="#" class="mostrar-imagenes" data-proyecto="proyecto1">Mostrar imágenes</a>
+                </p>
+
             </div>
 
             <div class="project-item">
-                <a href="https://github.com/usuario/proyecto2" target="_blank" class="project-link">
                     <div class="project-info">
                         <h3>Sistema Único de Gestión Institucional Superior Técnica – Proyecto en Equipo</h3>
                         <p>Este sistema fue desarrollado en colaboración con compañeros del instituto y profesores, a lo largo de un período de tres años.</p>
@@ -165,46 +187,57 @@
                         <p><em>Si bien el repositorio de este proyecto no es público, ante cualquier duda pueden comunicarse con el instituto en el siguiente enlace:
                         </p>
                     </div>
-                </a>
-                <i class="fab fa-github"></i>
+                    <a href="#" target="_blank" class="project-link">
+                        <img src="{{ asset('images/icons-github.png') }}" alt="GitHub Icon" class="github-icon-img">
+                    </a>
+                
                 <p class="project-docs">
                     <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
                         Documentación del proyecto
                     </a>
-                </p>
+                </p><br>
+                
+                <p class="project-images-link">
+                    <a href="#" class="mostrar-imagenes" data-proyecto="proyecto2">Mostrar imágenes</a>
+                </p><br>
+                <p>por referencias:</p>
                 <a href="http://www.i12.com.ar/i12/" target="_blank">http://www.i12.com.ar/i12/</a>
             </div>
 
             <div class="project-item">
-                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
                     <div class="project-info">
                         <h3>Sistema de Gestion de stock para pintureria</h3>
                         <p>En este proyecto participe realizando el desarrollo de backend utilizando Flask, un
-                        framework de python. En colaboracion con los equipos de frontend, diseño y analisis, se creo un 
+                        framework de python. En colaboracion con los equipos de frontend, diseño y analisis, se creo un
                         sistema que permite a los usuario generar presupuestos y administrar el stock para su negocio</p>
                     </div>
+                <a href="#" target="_blank" class="project-link">
+                    <img src="{{ asset('images/icons-github.png') }}" alt="GitHub Icon" class="github-icon-img">
                 </a>
-                <i class="fab fa-github"></i>
                 <p class="project-docs">
-                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank"></a>
                         Documentación del proyecto-en desarrollo
-                    </a>
                 </p>
+                {#<p class="project-images-link">#}
+                    {#<a href="#" class="mostrar-imagenes" data-proyecto="proyecto2">Show images</a>#}
+                {#</p>#}
             </div>
 
             <div class="project-item">
-                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
                     <div class="project-info">
                         <h3>Sistema de Gestion Comercial para comiqueria</h3>
                         <p>En desarrollo.<br>
                         Etapa: Licitacion de requerimentos- diseño de base de datos</p>
                     </div>
+                <a href="#" target="_blank" class="project-link">
+                <img src="{{ asset('images/icons-github.png') }}" alt="GitHub Icon" class="github-icon-img">
                 </a>
-                <i class="fab fa-github"></i>
                 <p class="project-docs">
-                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
-                        Documentación del proyecto
-                    </a>
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank"></a>
+                        Documentación del proyecto - en desarrollo
+                    {#<p class="project-images-link">#}
+                    {#<a href="#" class="mostrar-imagenes" data-proyecto="proyecto3">Show images</a>#}
+                {#</p>#}
                 </p>
             </div>
 
@@ -212,10 +245,9 @@
     </section>
 
     <section id="projects-en" class="section container lang-en" style="display: none;">
-        <h2>Projects</h2>
+        <h2>My Work</h2>
         <div class="project-list">
             <div class="project-item">
-                <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
                     <div class="project-info">
                         <h3>Recipe Management System</h3>
                         <p>This was my first project developed independently. Throughout 2024, I was responsible for gathering requirements and producing all the documentation. Then, from January to March 2025, I carried out the system’s full development.</p>
@@ -228,17 +260,23 @@
                             <li>Favorites and rating system</li>
                         </ul>
                     </div>
+                
+                <a href="https://github.com/Yamilruffa/RecetarioCocinaSym" target="_blank" class="project-link">
+                <img src="{{ asset('images/icons-github.png') }}" alt="GitHub Icon" class="github-icon-img">
                 </a>
-                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('archivos/Documentacion - Sistema Recetario.pdf') }}" target="_blank">
                         Project Documentation
                     </a>
                 </p>
+
+                <p class="project-images-link">
+                    <a href="#" class="mostrar-imagenes" data-proyecto="proyecto1">Show images</a>
+                </p>
             </div>
 
             <div class="project-item">
-                <a href="https://github.com/usuario/proyecto2" target="_blank" class="project-link">
+                
                     <div class="project-info">
                         <h3>Unified Management System for Technical Higher Education Institutions – Team Project</h3>
                         <p>This system was developed in collaboration with fellow students and professors over a period of three years.</p>
@@ -256,48 +294,57 @@
                         <p><em>Although the repository for this project is not public, you can contact the institute for more information at the following link:
                         </p>
                     </div>
+                <a href="#" target="_blank" class="project-link">
+                <img src="{{ asset('images/icons-github.png') }}" alt="GitHub Icon" class="github-icon-img">
                 </a>
-                <i class="fab fa-github"></i>
                 <p class="project-docs">
                     <a href="{{ asset('aca va la docu del proyecto 2') }}" target="_blank">
                         Project Documentation
                     </a>
-                </p>
+                </p><br>
+
+                <p class="project-images-link">
+                    <a href="#" class="mostrar-imagenes" data-proyecto="proyecto2">Show images</a>
+                </p><br>
+                <p>For references:</p>
                 <a href="http://www.i12.com.ar/i12/" target="_blank">http://www.i12.com.ar/i12/</a>
             </div>
 
             <div class="project-item">
-                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
+                    <div class="project-info">
+                        <h3>Stock Management System for a Paint Store</h3>
+                        <p>In this project, I participated in backend development using Flask, a Python framework.
+                        In collaboration with the frontend, design, and analytics teams, a system was created that allows
+                        users to generate quotes and manage inventory for their business.</p>
+                    </div>
+                <a href="#" target="_blank" class="project-link">
+                <img src="{{ asset('images/icons-github.png') }}" alt="GitHub Icon" class="github-icon-img">
+                </a>
+                <p class="project-docs">
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank"></a>
+                        Project documentation - in development
+                </p>
+                {#<p class="project-images-link">#}
+                    {#<a href="#" class="mostrar-imagenes" data-proyecto="proyecto3">Show images</a>#}
+                {#</p>#}
+            </div>
+
+            <div class="project-item">
                     <div class="project-info">
                         <h3>Comic Book Sales Management System</h3>
                         <p>Under development.<br>
                         Stage: Requirements bidding - database design</p>
                     </div>
+                <a href="#" target="_blank" class="project-link">
+                    <img src="{{ asset('images/icons-github.png') }}" alt="GitHub Icon" class="github-icon-img">
                 </a>
-                <i class="fab fa-github"></i>
                 <p class="project-docs">
-                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
+                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank"></a>
                         Project documentation - in development
-                    </a>
                 </p>
-            </div>
-
-            <div class="project-item">
-                <a href="https://github.com/usuario/proyecto3" target="_blank" class="project-link">
-                    <div class="project-info">
-                        <h3>Stock Management System for a Paint Store</h3>
-                        <p>In this project, I participated in backend development using Flask, a Python framework. 
-                        In collaboration with the frontend, design, and analytics teams, a system was created that allows 
-                        users to generate quotes and manage inventory for their business.</p>
-
-                    </div>
-                </a>
-                <i class="fab fa-github"></i>
-                <p class="project-docs">
-                    <a href="{{ asset('archivos/documentacion_proyecto2.pdf') }}" target="_blank">
-                        Documentación del proyecto
-                    </a>
-                </p>
+                {#<p class="project-images-link">#}
+                    {#<a href="#" class="mostrar-imagenes" data-proyecto="proyecto4">Show images</a>#}
+                {#</p>#}
             </div>
         </div>
     </section>
@@ -305,94 +352,25 @@
     <footer class="footer">
         <p>&copy; 2025 - Yamil Nicolas Ruffa.<br> Todos los derechos reservados.</p>
     </footer>
-    
 
-    <div id="image-modal" class="modal" style="display:none;">
+    <div id="image-modal" class="modal" style="display: none;">
         <div class="modal-content">
             <span id="modal-close" style="cursor:pointer; float:right; font-size: 1.5rem;">&times;</span>
             <div id="modal-images" style="display:flex; flex-wrap: wrap; gap: 1rem; justify-content: center;"></div>
         </div>
-        </div>
     </div>
+
+    <div id="image-modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close" id="modal-close">&times;</span>
+        <div id="modal-images" class="modal-images-container">
+            </div>
+    </div>
+    </div>
+    
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/main.js') }}"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const langToggle = document.getElementById('lang-toggle');
-            const langEsElements = document.querySelectorAll('.lang-es');
-            const langEnElements = document.querySelectorAll('.lang-en');
-            const navLinksEs = document.querySelectorAll('#nav-links .lang-es');
-            const navLinksEn = document.querySelectorAll('#nav-links .lang-en');
-
-            langToggle.addEventListener('click', function() {
-                const isEnglish = langToggle.textContent === 'English';
-
-                langEsElements.forEach(el => el.style.display = isEnglish ? 'none' : 'block');
-                langEnElements.forEach(el => el.style.display = isEnglish ? 'block' : 'none');
-
-                navLinksEs.forEach(el => el.style.display = isEnglish ? 'none' : 'inline-block');
-                navLinksEn.forEach(el => el.style.display = isEnglish ? 'inline-block' : 'none');
-
-                langToggle.textContent = isEnglish ? 'Español' : 'English';
-
-                // Update the title based on the language
-                document.title = isEnglish ? 'Home | Fullstack Developer' : 'Inicio | Fullstack Developer';
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-        // Función para togglear formulario según IDs pasados
-        function toggleForm(iconId, formId, cancelBtnId) {
-            const icon = document.getElementById(iconId);
-            const form = document.getElementById(formId);
-            const cancelBtn = document.getElementById(cancelBtnId);
-
-            if (!icon || !form || !cancelBtn) return;
-
-            icon.addEventListener('click', function(e) {
-                e.preventDefault();
-                if (form.style.display === 'none' || form.style.display === '') {
-                    form.style.display = 'flex';  // flex para respetar gap y estilos CSS
-                } else {
-                    form.style.display = 'none';
-                }
-            });
-
-            cancelBtn.addEventListener('click', function() {
-                form.style.display = 'none';
-            });
-
-            form.addEventListener('submit', function(event) {
-                event.preventDefault();
-
-                // Obtener valores según formulario
-                const nombre = form.querySelector('input[type="text"]').value.trim();
-                const correo = form.querySelector('input[type="email"]').value.trim();
-                const mensaje = form.querySelector('textarea').value.trim();
-
-                if (!nombre || !correo || !mensaje) {
-                    alert('Por favor completa todos los campos.');
-                    return;
-                }
-
-                const subject = encodeURIComponent('Mensaje desde tu web de ' + nombre);
-                const body = encodeURIComponent(`Nombre: ${nombre}\nCorreo: ${correo}\n\nMensaje:\n${mensaje}`);
-
-                window.location.href = `mailto:tuemail@gmail.com?subject=${subject}&body=${body}`;
-
-                form.style.display = 'none';
-                form.reset();
-            });
-        }
-
-        // Llamar a la función para ambos idiomas
-        toggleForm('gmail-icon-es', 'email-form-es', 'cancel-btn-es');
-        toggleForm('gmail-icon-en', 'email-form-en', 'cancel-btn-en');
-    });
-
-    </script>
+    <script src="{{ asset('js/main.js') }}" defer></script>
 {% endblock %}
